@@ -16,18 +16,22 @@ namespace HelloWorld
                 {
                     if (b && n > 0)
                     {
-                        if (n % 2 == 0)
+                        while (n != 1)
                         {
-                            Console.WriteLine(n + " % 2 == 0, n = " + n + " / 2");
-                            n /= 2;
-                            //                        Console.Write("n = " + n);
+                            int t = n;
+                            if (n % 2 == 0)
+                            {
+                                n /= 2;
+                                Console.WriteLine(t + " % 2 == 0, n = " + t + " / 2 = " + n);
+                                //Console.Write("n = " + n);
+                            }
+                            else
+                            {
+                                n = n * 3 + 1;
+                                Console.WriteLine(t + " % 2 != 0, n = " + t + " * 3 + 1 = " +n);
+                            }
                         }
-                        else
-                        {
-                            Console.WriteLine(n + " % 2 != 0, n = " + n + " * 3 + 1");
-                            n = n * 3 + 1;
-                        }
-                        Console.WriteLine("n = " + n);
+                        Console.WriteLine("The final value of n is " + n);
                     }
                     else Console.Write(s + " is not a positive integer. Please enter again: ");
                 }
